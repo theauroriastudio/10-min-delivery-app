@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { MapPin, ChevronDown, Search, Bell, Clock } from "lucide-react";
+import { MapPin, ChevronDown, Search, Bell, Clock, Wallet } from "lucide-react";
 import { userData } from "../data/mockData";
 
 const Header = () => {
@@ -15,10 +15,19 @@ const Header = () => {
           <Clock className="w-4 h-4" />
           <span className="font-semibold">Delivery in 30 minutes</span>
         </div>
-        <button className="flex items-center gap-1 bg-white/20 px-2 py-0.5 rounded-full text-xs">
-          <Bell className="w-3 h-3" />
-          <span>Offers</span>
-        </button>
+        <div className="flex items-center gap-3">
+          <button 
+            onClick={() => navigate("/profile")}
+            className="flex items-center gap-1 text-xs"
+          >
+            <Wallet className="w-4 h-4" />
+            <span>₹{userData.wallet}</span>
+          </button>
+          <button className="relative">
+            <Bell className="w-5 h-5" />
+            <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full" />
+          </button>
+        </div>
       </div>
 
       {/* Location Selector */}
@@ -30,7 +39,7 @@ const Header = () => {
           <MapPin className="w-5 h-5 text-white" />
           <div className="flex-1 text-left">
             <p className="text-xs text-teal-100">Deliver to</p>
-            <p className="text-sm font-medium truncate max-w-[200px]">
+            <p className="text-sm font-medium truncate max-w-[220px]">
               {userData.address}
             </p>
           </div>
@@ -42,10 +51,10 @@ const Header = () => {
       <div className="px-4 pb-4">
         <button
           onClick={() => navigate("/search")}
-          className="w-full bg-white rounded-xl flex items-center gap-3 px-4 py-3 shadow-sm"
+          className="w-full bg-white rounded-xl flex items-center gap-3 px-4 py-3 shadow-sm hover:shadow-md transition-shadow"
         >
           <Search className="w-5 h-5 text-gray-400" />
-          <span className="text-gray-400 text-sm">Search 'Homeopathy'</span>
+          <span className="text-gray-400 text-sm">Search medicines, health products...</span>
         </button>
       </div>
     </div>
