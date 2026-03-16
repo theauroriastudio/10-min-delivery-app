@@ -1,10 +1,26 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronRight, Star, Video, Clock } from "lucide-react";
-import { doctors } from "../data/mockData";
+import { useDoctors } from "../hooks/useData";
 
 const DoctorSection = () => {
   const navigate = useNavigate();
+  const { data: doctors, loading } = useDoctors();
+
+  if (loading) {
+    return (
+      <div className="py-4">
+        <div className="px-4 mb-3">
+          <h2 className="text-lg font-bold text-gray-800">Consult a Doctor</h2>
+        </div>
+        <div className="flex gap-3 px-4">
+          {[1, 2].map((i) => (
+            <div key={i} className="min-w-[200px] h-40 bg-gray-200 rounded-2xl animate-pulse" />
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="py-4">
@@ -26,7 +42,7 @@ const DoctorSection = () => {
 
       <div className="overflow-x-auto scrollbar-hide">
         <div className="flex gap-3 px-4 pb-2">
-          {doctors.map((doctor) => (
+          {doctors?.map((doctor) => (
             <div
               key={doctor.id}
               onClick={() => navigate("/consult")}

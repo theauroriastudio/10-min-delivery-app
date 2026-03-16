@@ -1,19 +1,35 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronRight, Star, Plus, ShieldCheck } from "lucide-react";
-import { featuredProducts } from "../data/mockData";
+import { useProducts } from "../hooks/useData";
 import { useCart } from "../context/CartContext";
 import { toast } from "sonner";
 
 const FeaturedProducts = () => {
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  const { data: products, loading } = useProducts();
 
   const handleAddToCart = (product, e) => {
     e.stopPropagation();
     addToCart(product);
     toast.success(`${product.name} added to cart`);
   };
+
+  if (loading) {
+    return (
+      <div className="py-4">
+        <div className="flex items-center justify-between px-4 mb-3">
+          <h2 className="text-lg font-bold text-gray-800">Featured Products</h2>
+        </div>
+        <div className="flex gap-3 px-4">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="min-w-[160px] h-56 bg-gray-200 rounded-2xl animate-pulse" />
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="py-4">
@@ -29,7 +45,7 @@ const FeaturedProducts = () => {
       </div>
       <div className="overflow-x-auto scrollbar-hide">
         <div className="flex gap-3 px-4 pb-2">
-          {featuredProducts.map((product) => (
+          {products?.map((product) => (
             <div
               key={product.id}
               onClick={() => navigate(`/product/${product.id}`)}

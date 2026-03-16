@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Copy, Check } from "lucide-react";
-import { banners } from "../data/mockData";
+import { useBanners } from "../hooks/useData";
 import { toast } from "sonner";
 
 const BannerCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [copiedCode, setCopiedCode] = useState(null);
+  const { data: banners, loading } = useBanners();
 
   useEffect(() => {
+    if (!banners?.length) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % banners.length);
     }, 4000);
     return () => clearInterval(timer);
-  }, []);
+  }, [banners]);
 
   const copyCode = (code) => {
     navigator.clipboard.writeText(code);
@@ -22,12 +24,22 @@ const BannerCarousel = () => {
   };
 
   const goToPrev = () => {
+    if (!banners?.length) return;
     setCurrentIndex((prev) => (prev - 1 + banners.length) % banners.length);
   };
 
   const goToNext = () => {
+    if (!banners?.length) return;
     setCurrentIndex((prev) => (prev + 1) % banners.length);
   };
+
+  if (loading || !banners?.length) {
+    return (
+      <div className="px-4 py-2">
+        <div className="h-32 bg-gray-200 rounded-2xl animate-pulse" />
+      </div>
+    );
+  }
 
   return (
     <div className="px-4 py-2">
@@ -41,7 +53,7 @@ const BannerCarousel = () => {
               key={banner.id}
               className="min-w-full p-5 relative"
               style={{
-                background: `linear-gradient(135deg, ${banner.bgColor} 0%, ${banner.bgColor}dd 100%)`,
+                background: `linear-gradient(135deg, ${banner.bgColor || banner.bg_color} 0%, ${banner.bgColor || banner.bg_color}dd 100%)`,
               }}
             >
               <div className="relative z-10">
