@@ -85,7 +85,7 @@ export const featuredProducts = [
     price: 32,
     mrp: 35,
     discount: 9,
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=200",
+    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=300&fit=crop",
     prescription: false,
     rating: 4.5
   },
@@ -96,7 +96,7 @@ export const featuredProducts = [
     price: 45,
     mrp: 52,
     discount: 13,
-    image: "https://images.unsplash.com/photo-1550572017-edd951b55104?w=200",
+    image: "https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&h=300&fit=crop",
     prescription: false,
     rating: 4.3
   },
@@ -107,7 +107,7 @@ export const featuredProducts = [
     price: 125,
     mrp: 145,
     discount: 14,
-    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=200",
+    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=400&h=300&fit=crop",
     prescription: true,
     rating: 4.6
   },
@@ -118,7 +118,7 @@ export const featuredProducts = [
     price: 98,
     mrp: 115,
     discount: 15,
-    image: "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=200",
+    image: "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400&h=300&fit=crop",
     prescription: true,
     rating: 4.4
   },
@@ -129,7 +129,7 @@ export const featuredProducts = [
     price: 215,
     mrp: 250,
     discount: 14,
-    image: "https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=200",
+    image: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=400&h=300&fit=crop",
     prescription: false,
     rating: 4.2
   },
@@ -140,7 +140,7 @@ export const featuredProducts = [
     price: 320,
     mrp: 400,
     discount: 20,
-    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=200",
+    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&h=300&fit=crop",
     prescription: false,
     rating: 4.7
   }
