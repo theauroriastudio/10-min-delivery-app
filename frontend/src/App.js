@@ -11,6 +11,7 @@ import SearchPage from "./pages/SearchPage";
 import ConsultDoctorPage from "./pages/ConsultDoctorPage";
 import LabTestsPage from "./pages/LabTestsPage";
 import BottomNavigation from "./components/BottomNavigation";
+import InstallPrompt from "./components/InstallPrompt";
 import { CartProvider } from "./context/CartContext";
 
 function App() {
