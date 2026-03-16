@@ -1,6 +1,6 @@
-const CACHE_NAME = 'medinos-v1';
-const STATIC_CACHE = 'medinos-static-v1';
-const DYNAMIC_CACHE = 'medinos-dynamic-v1';
+const CACHE_NAME = '10min-delivery-v1';
+const STATIC_CACHE = '10min-delivery-static-v1';
+const DYNAMIC_CACHE = '10min-delivery-dynamic-v1';
 
 // Assets to cache immediately on install
 const STATIC_ASSETS = [
@@ -108,7 +108,7 @@ async function networkFirst(request) {
 // Handle push notifications (for future use)
 self.addEventListener('push', (event) => {
   const data = event.data?.json() || {};
-  const title = data.title || 'Medinos';
+  const title = data.title || '10MinutesDelivery';
   const options = {
     body: data.body || 'You have a new notification',
     icon: '/icons/icon-192x192.png',

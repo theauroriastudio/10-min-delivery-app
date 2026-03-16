@@ -147,7 +147,7 @@ const ProfilePage = () => {
 
       {/* App Version */}
       <div className="text-center py-4">
-        <p className="text-xs text-gray-400">Medinos v4.2.6</p>
+        <p className="text-xs text-gray-400">10MinutesDelivery v1.0.0</p>
       </div>
     </div>
   );

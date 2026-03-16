@@ -1,7 +1,7 @@
 {
-  "name": "Medinos - One Health App",
-  "short_name": "Medinos",
-  "description": "Your trusted online pharmacy & health partner. Order medicines, consult doctors, and book lab tests.",
+  "name": "10MinutesDelivery - Quick Delivery App",
+  "short_name": "10MinDelivery",
+  "description": "Your trusted quick delivery partner. Order with 10-minute delivery.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0D9488",

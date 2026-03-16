@@ -78,7 +78,7 @@ const InstallPrompt = () => {
           </div>
           <div className="flex-1">
             <h3 className="text-sm font-bold text-gray-800 mb-1">
-              Install Medinos App
+              Install 10MinutesDelivery App
             </h3>
             <p className="text-xs text-gray-500 mb-3">
               {isIOS 

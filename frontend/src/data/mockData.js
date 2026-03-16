@@ -1,4 +1,4 @@
-// Mock data for Medinos App Clone
+// Mock data for 10MinutesDelivery App
 
 export const userData = {
   name: "Rahul Kumar",
