@@ -7,6 +7,7 @@ import FeaturedProducts from "../components/FeaturedProducts";
 import DoctorSection from "../components/DoctorSection";
 import LabTestSection from "../components/LabTestSection";
 import HealthTips from "../components/HealthTips";
+import OffersStrip from "../components/OffersStrip";
 
 const HomePage = () => {
   return (
@@ -18,6 +19,9 @@ const HomePage = () => {
       
       {/* Banner Carousel */}
       <BannerCarousel />
+      
+      {/* Offers Strip */}
+      <OffersStrip />
       
       {/* Categories */}
       <CategorySlider />
@@ -33,6 +37,9 @@ const HomePage = () => {
       
       {/* Health Tips */}
       <HealthTips />
+      
+      {/* Footer spacing */}
+      <div className="h-4" />
     </div>
   );
 };
