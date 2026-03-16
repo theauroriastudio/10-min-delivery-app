@@ -38,7 +38,7 @@ const HealthTips = () => {
               </div>
             </div>
           );
-        })};
+        })}
       </div>
     </div>
   );
