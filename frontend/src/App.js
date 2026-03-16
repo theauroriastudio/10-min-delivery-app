@@ -31,6 +31,7 @@ function App() {
               <Route path="/lab-tests" element={<LabTestsPage />} />
             </Routes>
             <BottomNavigation />
+            <InstallPrompt />
           </div>
         </BrowserRouter>
         <Toaster position="top-center" />
